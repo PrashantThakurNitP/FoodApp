@@ -42,7 +42,7 @@ public class FoodController {
 
         if (existingFood.isPresent()) {
             food.setId(foodId);
-            return ResponseEntity.ok(foodService.saveFood(food));
+            return ResponseEntity.ok(foodService.updateFood(food));
         } else {
             return ResponseEntity.notFound().build();
         }

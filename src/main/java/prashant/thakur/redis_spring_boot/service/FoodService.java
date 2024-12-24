@@ -23,6 +23,12 @@ public class FoodService {
 
     @CachePut(value = "foods", key = "#result.id") // uses id from response
     public Food saveFood(Food food) {
+        food.setId(null);
+        return foodRepository.save(food);
+    }
+
+    @CachePut(value = "foods", key = "#result.id") // uses id from response
+    public Food updateFood(Food food) {
         return foodRepository.save(food);
     }
 
